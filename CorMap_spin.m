@@ -40,7 +40,7 @@ end
 load('\demo\input\map1.mat') % map1 for spatial correlation
 load('\demo\input\map2.mat') % map2 for spatial correlation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[p_spin, r_dist,x_perm,y_perm]= perm_sphere_p(map1, map2, perm_id_cortical, perm_id_subcortical,corr_type);
+[p_spin, r_dist,x_perm,y_perm]= perm_sphere_p_modify(map1, map2, perm_id_cortical, perm_id_subcortical,corr_type);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %[p_spin, r_dist,x_perm,y_perm] = spin_test(map1, map2,surface_name,parcellation_name,n_rot,correlation_type);
 
