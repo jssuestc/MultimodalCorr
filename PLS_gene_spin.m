@@ -39,7 +39,7 @@ end
 %typically top 2 or 3 components will explain a large part of the variance
 %(hopefully!)
 [XL,YL,XS,YS,BETA,PCTVAR,MSE,stats]=plsregress(X,Y);
-save('MCM_fun_pls_result', 'XL', 'YL', 'XS', 'YS', 'BETA', 'PCTVAR', 'MSE', 'stats');
+%save('MCM_fun_pls_result', 'XL', 'YL', 'XS', 'YS', 'BETA', 'PCTVAR', 'MSE', 'stats');
 dim=15;
 plot(1:dim,cumsum(100*PCTVAR(2,1:dim)),'-o','LineWidth',1.5,'Color',[140/255,0,0]);
 set(gca,'Fontsize',14)
