@@ -1,11 +1,10 @@
 clear;clc
-addpath('D:\Program Files\Polyspace\R2021a\toolbox\matlab')
 n_rot=5000;
 corr_type='spearman';
 nroi_cortical=210; nroi_subcortical=36;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[vertex_coords_sp, faces]= read_surf('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\fsaverage\surf\lh.sphere.reg');
-[vertices, label_annot, colortable] = read_annotation('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\fsaverage\label\lh.BN_Atlas.annot');
+[vertex_coords_sp, faces]= read_surf('\fsaverage\surf\lh.sphere.reg');
+[vertices, label_annot, colortable] = read_annotation('\fsaverage\label\lh.BN_Atlas.annot');
 ind=0;          % iteration counter
 lh_centroid=[];    % initialisation of centroid array
 for ic=1:colortable.numEntries      % loop over parcellated structures
@@ -18,8 +17,8 @@ for ic=1:colortable.numEntries      % loop over parcellated structures
 end
 lh_centroid=lh_centroid(all(~isnan(lh_centroid),2),:);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-[vertex_coords_sp, faces]= read_surf('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\fsaverage\surf\rh.sphere.reg');
-[vertices, label_annot, colortable] = read_annotation('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\fsaverage\label\rh.BN_Atlas.annot');
+[vertex_coords_sp, faces]= read_surf('\fsaverage\surf\rh.sphere.reg');
+[vertices, label_annot, colortable] = read_annotation('\fsaverage\label\rh.BN_Atlas.annot');
 ind=0;          % iteration counter
 rh_centroid=[];    % initialisation of centroid array
 for ic=1:colortable.numEntries      % loop over parcellated structures
@@ -38,8 +37,8 @@ for w=1:n_rot
     perm_id_subcortical(:,w)=randperm(nroi_subcortical)';
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-load('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\demo\input\map1.mat') % map1 for spatial correlation
-load('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\demo\input\map2.mat') % map2 for spatial correlation
+load('\demo\input\map1.mat') % map1 for spatial correlation
+load('\demo\input\map2.mat') % map2 for spatial correlation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [p_spin, r_dist,x_perm,y_perm]= perm_sphere_p(map1, map2, perm_id_cortical, perm_id_subcortical,corr_type);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
