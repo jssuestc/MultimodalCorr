@@ -1,8 +1,8 @@
 clear;clc
-load('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\demo\input\Ydata.mat') % load dependent vadiables
+load('\demo\input\Ydata.mat') % load dependent vadiables
 % z-score:
 Y=zscore(Y);
-load('E:\NAS\LapTop_ssj\SZ-Gen\Writing\Submit\BMCmedicine\Revise1\Response2\GitHub\demo\input\Xdata.mat') % load independent variables
+load('demo\input\Xdata.mat') % load independent variables
 X=parcelExpression; X(isnan(X))=0;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
